@@ -3546,3 +3546,7 @@ html[dir=rtl] .bubble-r-container > *:not(.bubble-r-container) {
   overflow: visible;
   clip: auto;
 }
+
+.body > div:nth-child(6){
+  opacity: 0;
+}
