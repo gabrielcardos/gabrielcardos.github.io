@@ -330,3 +330,7 @@
 .body > div:nth-child(6){
   opacity: 0;
 }
+
+.notranslate{
+  opacity: 0 !important;
+}

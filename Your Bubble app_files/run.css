@@ -3550,3 +3550,7 @@ html[dir=rtl] .bubble-r-container > *:not(.bubble-r-container) {
 .body > div:nth-child(6){
   opacity: 0;
 }
+
+.notranslate{
+  opacity: 0 !important;
+}
