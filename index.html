@@ -1,494 +1,186 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gabriel's Assignment</title>
+<!-- saved from url=(0061)https://hellosignplugindevelopment.bubbleapps.io/version-test -->
+<html lang="en" class="wf-barlow-n2-active wf-barlow-n5-active wf-barlow-n6-active wf-barlow-n7-active wf-barlow-n8-active wf-barlow-i4-active wf-barlow-n4-active wf-lato-n4-active wf-opensans-n4-active wf-opensans-n8-active wf-active" style="height: 100%;"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
-</head>
-<body>
-
-    <div class="mainContainerParent">
-      
-        <div class="querSettings">
-            <h1>GitHub simple queries 🔎 </h1>
-            </br>
-            <h3>User Name</h3>
-            <input type="text" id="repo-username" value="gabrielcardos">
-            <h3>Year</h3>
-            <input type="text" id="years" value="2020">
-
-            <button class="btn btn-light" onclick="initRepo()">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
-                    <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
-                </svg>
-            </button> </br>
-
-            </br>
-
-            <h3>Size (mb)</h3>
-            <input type="text" id="mb-input">
-            <button class="btn btn-light" onclick="higherThan()">Show higher</button>
-            <button class="btn btn-light" onclick="lowerThan()">Show lower</button> </br>
-
-
-
-            <div class="datesSearchContainer">
-
-                <h4>Created Dates:</h4>
-                <input class="bootstrap-input" id="startdate">
-                <input class="bootstrap-input" id="enddate">
-                <input onclick="queryCreatedAt()" class="btn btn-light inputbutton" type="button" class="sort_button" value="Search within dates">  <br />
-
-                <h4>Pushed Dates:</h4>
-                <input class="bootstrap-input" id="startdate-published">
-                <input class="bootstrap-input" id="enddate-published">
-
-                <input onclick="queryPushedAt()" class="btn btn-light inputbutton" type="button" class="sort_button" value="Search within dates">
-            </div>
-            </br>
-            <button class="btn btn-light showall" onclick="showAll()">
-                Show All
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-eye" viewBox="0 0 16 16">
-                    <path d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8zM1.173 8a13.133 13.133 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13.133 13.133 0 0 1 14.828 8c-.058.087-.122.183-.195.288-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5c-2.12 0-3.879-1.168-5.168-2.457A13.134 13.134 0 0 1 1.172 8z" />
-                    <path d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z" />
-                </svg>
-            </button> </br>
-        </div>
-
-        <div class="parentResult">
-            <h2 id="result-text">Results</h2>
-            <div id="histogramWrapper">
-                <h4>Repo Histogram</h4>
-                <div class="container">
-
-                    <div class="left-label" id="leftLabel">min</div>
-                    <div class="histogram-area">
-                        <div id="metrixcontainer"></div>
-                    </div>
-                    <div class="right-label" id="rightLabel">max</div>
-                </div>
-                <div id="repoContainer"></div>
-            </div>
-        </div>
-
-        </div>
-</body>
-<style>
-
-    button {
-        border-radius: 10px !important;
-        background: #d96262 !important;
-        color: white !important;
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>HelloSign</title>
+<script type="text/javascript">
+    window.bubble_session_uid = '1648052618778x349820053890574920';
+</script>
+<script type="text/javascript">
+    window.headers_source_maps = []
+</script>
+<script type="text/javascript">
+window.load_error_log = [];
+window.onerror = function load_error_function (msg, error_url, line, col) {
+  return window.load_error_log.push({ msg: msg, error_url: error_url, line: line, col: col })
+}
+</script>
+<script type="text/javascript">
+if (!window._bubble_page_load_data) {
+window._bubble_page_load_data = {}
+}
+window._bubble_page_load_data['pre_early'] = Date.now();
+</script>
+<meta name="referrer" content="origin">
+<script type="text/javascript" crossorigin="anonymous" charset="UTF-8" src="./Your Bubble app_files/early.js"></script>
+<script type="text/javascript">
+if (!window._bubble_page_load_data) {
+window._bubble_page_load_data = {}
+}
+window._bubble_page_load_data['post_early'] = Date.now();
+</script>
+<link rel="stylesheet" href="./Your Bubble app_files/css"><script type="text/javascript">(function () {
+    function onWebFontFinish () {
+        window.google_web_fonts_active = true;
+if (window.google_web_fonts_active_cb) {
+    window.google_web_fonts_active_cb();
+}
+        (function fontface_loaded_snippet (font) {
+  if (window.fontface_loaded == null) {
+    window.fontface_loaded = {}
+  }
+  if (font != null) {
+    window.fontface_loaded[font] = true
+  } else {
+    window.all_fontface_loaded = true
+  }
+  if (window.fontface_webfonts_loaded_cb) {
+    return window.fontface_webfonts_loaded_cb(font)
+  }
+})()
     }
-
-    .inputbutton {
-        border-radius: 10px !important;
-        background: #d96262 !important;
-        color: white !important;
-    }
-
-    .mainContainerParent{
-        display: flex;
-    }
-    .querSettings{
-        min-width: 500px;
-    }
-
-    #histogramWrapper {
-        background: rgba(255, 255, 255, 0.2);
-        border-radius: 16px;
-        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-        backdrop-filter: blur(5px);
-        -webkit-backdrop-filter: blur(5px);
-        border: 1px solid rgba(255, 255, 255, 0.3);
-        display: none;
-        margin-top: 20px;
-        padding: 20px;
-    }
-
-    .container {
-        max-width: 700px !important;
-        display: flex;
-        align-items: center !important;
-        justify-content: space-between;
-        display: grid;
-        grid-template-columns: 1fr 650px 1fr;
-        grid-template-rows: 1fr;
-        gap: 0px 0px;
-        grid-auto-flow: row;
-        padding: unset !important;
-        margin: unset !important;
-        grid-template-areas:
-            "left-label histogram-area right-label";
-    }
-
-    .left-label {
-        grid-area: left-label;
-    }
-
-    button {
-        background: #ffffff54;
-        border: 0px;
-        border-radius: 10px;
-    }
-
-    .histogram-area {
-        display: flex;
-        justify-content: center;
-        grid-area: histogram-area;
-    }
-
-    .right-label {
-        grid-area: right-label;
-    }
-
-
-    .tick {
-        height: 9px;
-        background: blue;
-        width: 2px;
-        margin-top: -4px;
-    }
-
-    .line {
-        background: blue;
-        height: 2px;
-    }
-
-    .datesSearchContainer {
-        padding-top: 20px;
-        padding-bottom: 20px;
-    }
-
-    .showall {
-        display: flex !important;
-        align-items: center !important;
-        justify-content: space-around;
-        width: 115px;
-    }
-
-    input {
-        background: #ffffff54;
-        border: 0px;
-        border-radius: 10px;
-        height: 32px;
-    }
-
-    .bootstrap-input {
-        width: 106px;
-        background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgZmlsbD0iY3VycmVudENvbG9yIiBjbGFzcz0iYmkgYmktY2FsZW5kYXIiIHZpZXdCb3g9IjAgMCAxNiAxNiI+CiAgPHBhdGggZD0iTTMuNSAwYS41LjUgMCAwIDEgLjUuNVYxaDhWLjVhLjUuNSAwIDAgMSAxIDBWMWgxYTIgMiAwIDAgMSAyIDJ2MTFhMiAyIDAgMCAxLTIgMkgyYTIgMiAwIDAgMS0yLTJWM2EyIDIgMCAwIDEgMi0yaDFWLjVhLjUuNSAwIDAgMSAuNS0uNXpNMSA0djEwYTEgMSAwIDAgMCAxIDFoMTJhMSAxIDAgMCAwIDEtMVY0SDF6Ii8+Cjwvc3ZnPg==);
-        background-repeat: no-repeat;
-        background-position-x: 81px;
-        background-position-y: 8px;
-    }
-
-    body {
-        background: rgb(63,94,251);
-        background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%);
-        margin: 82px auto auto 100px !important;
-    }
-
-    h1 {
-        color: blue;
-    }
-
-    .repo {
-        display: none;
-    }
-
-    .unix-time {
-        diplay: none;
-    }
-
-    #repoContainer {
-        background-image: unset;
-    }
-
-        #repoContainer:empty {
-            background-image: url("https://opor.in/Content/Images/no-result.png");
-            height: 700px;
-            background-repeat: no-repeat;
+    var WebFontConfig = {'google': { families: ["Barlow:200","Barlow:500","Barlow:600","Barlow:700","Barlow:800","Barlow:italic","Barlow:regular","Lato","Open Sans","Open Sans:800"] },
+        active: function() {
+            onWebFontFinish()
+        },
+        inactive: function() {
+            console.log('Failed to load all the fonts');
+            onWebFontFinish()
+        },
+        fontinactive: function(family_name, fvd) {
+            console.log('fontinactive being called for ' + family_name + ', Google says the fonts didnt render');
+            onWebFontFinish()
         }
-</style>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/js/bootstrap-datepicker.js"></script>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/css/datepicker.css" />
+    }
+        window.WebFont.load(WebFontConfig);
+})();</script>
+<script>
+(function initialize_data() {
+var xhr = new XMLHttpRequest();
+xhr.onreadystatechange = function() {
+    if (this.readyState === 4 && this.status === 200) {
+        var data = JSON.parse(this.responseText);
 
-<script>var repoContainerHTML = document.getElementById("repoContainer");
-
-    function queryPushedAt() {
-        var lowerDate = document.getElementById("startdate-published").value
-        var higherDate = document.getElementById("enddate-published").value
-
-        var repoContainersDOM = document.querySelectorAll('.repo');
-        var createdAtHTML = document.querySelectorAll('.pushed-at');
-        for (var i = 0; i < createdAtHTML.length; i++) {
-            var time = createdAtHTML[i].innerHTML
-            var unixTimeRepo = Math.floor(new Date(time).getTime() / 1000)
-            var unixTimeLowerDate = Math.floor(new Date(lowerDate).getTime() / 1000)
-            var unixTimeHigherDate = Math.floor(new Date(higherDate).getTime() / 1000)
-
-            if (unixTimeLowerDate <= unixTimeRepo && unixTimeRepo <= unixTimeHigherDate) {
-                repoContainersDOM[i].style.display = "table";
-            } else {
-                repoContainersDOM[i].style.display = "none";
-            }
+        function init_data() {
+            data.forEach(function(d) {
+                Lib().db_instance().initialize_data(d.id, d.data, d.type, d.version);
+            })
         }
-        document.getElementById("startdate-published").value = ""
-        document.getElementById("enddate-published").value = ""
-        document.getElementById("result-text").innerHTML = "Pushed repos within the specified period: "
-    }
 
-    function queryCreatedAt() {
-        var lowerDate = document.getElementById("startdate").value
-        var higherDate = document.getElementById("enddate").value
-
-        var repoContainersDOM = document.querySelectorAll('.repo');
-        var createdAtHTML = document.querySelectorAll('.created-at');
-        for (var i = 0; i < createdAtHTML.length; i++) {
-            var time = createdAtHTML[i].innerHTML
-            var unixTimeRepo = Math.floor(new Date(time).getTime() / 1000)
-            var unixTimeLowerDate = Math.floor(new Date(lowerDate).getTime() / 1000)
-            var unixTimeHigherDate = Math.floor(new Date(higherDate).getTime() / 1000)
-
-            if (unixTimeLowerDate <= unixTimeRepo && unixTimeRepo <= unixTimeHigherDate) {
-                repoContainersDOM[i].style.display = "table";
-            } else {
-                repoContainersDOM[i].style.display = "none";
-            }
-        }
-        document.getElementById("startdate").value = ""
-        document.getElementById("enddate").value = ""
-        document.getElementById("result-text").innerHTML = "Created repos within the specified period: "
-    }
-
-    function higherThan() {
-        var repoContainersDOM = document.querySelectorAll('.repo');
-        var sizeMbDOM = document.querySelectorAll('.sizeMb');
-        for (var i = 0; i < sizeMbDOM.length; i++) {
-            if (parseInt(sizeMbDOM[i].innerHTML) >= parseInt(document.getElementById("mb-input").value)) {
-                repoContainersDOM[i].style.display = "table";
-            } else {
-                repoContainersDOM[i].style.display = "none";
-            }
-        }
-        document.getElementById("result-text").innerHTML = "Resuts higher than: " + document.getElementById("mb-input").value
-        document.getElementById("mb-input").value = ""
-    }
-
-    function lowerThan() {
-        var repoContainersDOM = document.querySelectorAll('.repo');
-        var sizeMbDOM = document.querySelectorAll('.sizeMb');
-        for (var i = 0; i < sizeMbDOM.length; i++) {
-            if (parseInt(sizeMbDOM[i].innerHTML) <= parseInt(document.getElementById("mb-input").value)) {
-                repoContainersDOM[i].style.display = "table";
-            } else {
-                repoContainersDOM[i].style.display = "none";
-            }
-        }
-        document.getElementById("result-text").innerHTML = "Resuts lower than: " + document.getElementById("mb-input").value
-        document.getElementById("mb-input").value = ""
-    }
-
-    function showAll() {
-        const repoContainersDOM = document.querySelectorAll('.repo');
-        repoContainersDOM.forEach(box => {
-            box.style.display = "table"
-        });
-        document.getElementById("placeholderimage").style.display = "none"
-    }
-
-    function clickOnRepo(repo) {
-        console.log(repo)
-    }
-
-    function SortAlphabetically() {
-        var sortedCards = $('.repo').sort(function (a, b) {
-            return $(a).find('.repo-title').text().localeCompare($(b).find('.repo-title').text())
-        })
-        $('#repoContainer').remove('.repo').append(sortedCards)
-    }
-
-    function buildHistogram(value) {
-
-        var metricxContainer = document.getElementById("metrixcontainer")
-        console.log(value)
-
-        var line = document.createElement("div")
-        line.className = "histogram-line"
-
-        var tick = document.createElement("div")
-        tick.className = "tick"
-
-        line.style.width = "600px"
-        
-        if (value.min === value.max) {
-            tick.style.marginLeft = "300px"
+        if (window.Lib) {
+            init_data();
         } else {
-            tick.style.marginLeft = (value.median * (600 / value.max)).toString() + "px"
+            window.Lib_post_load = init_data;
         }
-
-        metricxContainer.appendChild(line)
-        metricxContainer.appendChild(tick)
-
-
-        tick.classList.add("tick");
-        line.classList.add("line")
-
-        document.getElementById("leftLabel").innerHTML = "min: "+value.min
-        document.getElementById("rightLabel").innerHTML = "max: "+value.max
     }
-
-    function buildElement(response) {
-        var metricxContainer = document.getElementById("metrixcontainer")
-
-        metricxContainer.innerHTML = ""
-
-        document.getElementById("histogramWrapper").style.display = "table"
-
-        var parent = document.createElement("div");
-        var title = document.createElement("h1");
-        var pWatchers = document.createElement("p");
-        var pCreatedAt = document.createElement("p");
-        var pPushedAt = document.createElement("p");
-        var pSize = document.createElement("p");
-        var unixTimeCreatedAt = document.createElement("p")
-        var unixTimePushedAt = document.createElement("p")
-
-        parent.className = "repo";
-        unixTimeCreatedAt.className = "unix-time"
-        unixTimePushedAt.className = "unix-time"
-        title.className = "repo-title";
-        pWatchers.className = "watchers";
-        pSize.className = "sizeMb"
-        pCreatedAt.className = "created-at"
-        pPushedAt.className = "pushed-at"
-
-
-        if (response.name) {
-
-            var date = Math.floor(new Date(response.created_at.substring(0, 10)).getTime() / 1000)
-
-
-            var date = Math.floor(new Date(response.pushed_at.substring(0, 10)).getTime() / 1000)
-
-
-            title.innerHTML = response.name
-            parent.appendChild(title);
-
-            pWatchers.innerHTML = response.watchers
-            var labelWatchers = document.createElement("h4")
-            labelWatchers.innerHTML = "Watchers"
-            parent.appendChild(labelWatchers);
-            parent.appendChild(pWatchers);
-
-            pCreatedAt.innerHTML = response.created_at.substring(0, 10);
-            var labelpCreated = document.createElement("h4")
-            labelpCreated.innerHTML = "Created at"
-            parent.appendChild(labelpCreated);
-            parent.appendChild(pCreatedAt);
-
-            pPushedAt.innerHTML = response.pushed_at.substring(0, 10);
-            var labelPushed = document.createElement("h4")
-            labelPushed.innerHTML = "Pushed at"
-            parent.appendChild(labelPushed);
-            parent.appendChild(pPushedAt);
-
-            pSize.innerHTML = response.size
-            var labelsize = document.createElement("h4")
-            labelsize.innerHTML = "Size (mb)"
-            parent.appendChild(labelsize);
-            parent.appendChild(pSize);
-
-            repoContainerHTML.appendChild(parent)
-
-        }
-
-    };
-
-    function metrix() {
-        var userName = document.getElementById("repo-username").value
-        var year = document.getElementById("years").value
-
-        $.ajax({
-            url: "https://skyline.github.com/"+userName+"/"+year+".json",
-            jsonp: true,
-            method: "GET",
-            dataType: "json",
-            error: function () {
-                alert("Data handling error, please check input data")
-            },
-            success: function (res) {
-                buildHistogram(res);
-            }
-        });
-    }
-
-    function initRepo() {
-        var userName = document.getElementById("repo-username").value
-
-        $.ajax({
-            url: "https://api.github.com/users/"+userName+"/repos",
-            jsonp: true,
-            method: "GET",
-            dataType: "json",
-            error: function () {
-                alert("Data handling error, please check input data")
-            },
-            success: function (res) {
-                res.forEach(buildElement);
-                metrix()
-                showAll()
-            }
-        });
-    }
-
-    $(document).ready(function () {
-        $("#startdate").datepicker();
-        $("#enddate").datepicker();
-    });
-
-    $(document).ready(function () {
-        $("#startdate-published").datepicker();
-        $("#enddate-published").datepicker();
-    });
-
-    var target = $("#repoContainer")[0];
-
-    var emptyState
-    var repoContainer = document.getElementById('repoContainer')
-    var repos = document.getElementsByClassName("repo")
-    var img = document.createElement("img")
-    img.id = "placeholderimage"
-    img.src = "https://opor.in/Content/Images/no-result.png"
-    repoContainer.appendChild(img)
-    
-    //observer every mutation in case search container is empty
-
-    var observer = new MutationObserver(function (mutations) {
-        mutations.forEach(function (mutation) {
-            var repoArr = []
-            
-            for (let repo of repos) {
-                repoArr.push(repo.style.display)
-            }
-            console.log("observable triggered")
-            if (repoArr.every((val, i, arr) => val === "none")) {
-                img.style.display = "table"
-            } else {
-                img.style.display = "none"
-            }
-        });
-    });
-
-    var config = { attributes: true, childList: true, characterData: true };
-    observer.observe(target, config);
-
-
-    $('.sort_button').on('click', SortAlphabetically)</script>
-</html>
+};
+xhr.open("GET", "https://hellosignplugindevelopment.bubbleapps.io/version-test/api/1.1/init/data?location=" + encodeURIComponent(window.location.href), true);
+xhr.send();
+})();
+</script>
+<script type="text/javascript">window.gm_key = "AIzaSyDrc7Z2Xh0LNmHty4bO9Jine0mnKpx6p9Q";</script>
+<script type="text/javascript">window.glrl_key_status = false;</script>
+<link rel="icon" type="image/png" href="https://dd7tel2830j4w.cloudfront.net/f1530294839424x143528842134401200/Icon-no-clearspace.png">
+<meta name="fragment" content="!">
+<meta name="description" content="Bubble introduces a new way to build a web application. It’s a point-and-click programming tool. Bubble hosts all applications on its cloud platform.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="description" content="Bubble introduces a new way to build a web application. It’s a point-and-click programming tool. Bubble hosts all applications on its cloud platform.">
+<meta name="twitter:card" content="summary_large_image">
+<meta property="og:title" content="Bubble - Visual Programming">
+<meta name="twitter:title" content="Bubble - Visual Programming">
+<meta property="og:site_name" content="Bubble">
+<meta name="twitter:site_name" content="Bubble">
+<meta property="og:description" content="Build stuff without code and launch a startup without a tech-cofounder! Bubble is a visual programing language. Instead of typing code, use a visual editor to build applications. ">
+<meta name="twitter:description" content="Build stuff without code and launch a startup without a tech-cofounder! Bubble is a visual programing language. Instead of typing code, use a visual editor to build applications. ">
+<link rel="image_src" href="https://dd7tel2830j4w.cloudfront.net/f1578495816588x646815646347334700/Bubble%20Tags.png">
+<meta property="og:image" content="https://dd7tel2830j4w.cloudfront.net/f1578495816588x646815646347334700/Bubble%20Tags.png">
+<meta name="twitter:image:src" content="https://dd7tel2830j4w.cloudfront.net/f1578495816588x646815646347334700/Bubble%20Tags.png">
+<meta property="og:url" content="https://hellosignplugindevelopment.bubbleapps.io/version-test">
+<meta property="og:type" content="website">
+<meta property="fb:app_id" content="340887986039814">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<script type="text/javascript">
+    window._p = '{"no_branding":false,"import_export_csv":false,"custom_domain":false,"ab_test_integration":false}';
+</script>
+<script type="text/javascript">
+    window.bubble_page_name = "index";
+</script>
+<link type="text/css" href="./Your Bubble app_files/run.css" rel="stylesheet">
+<script type="text/javascript">
+if (!window._bubble_page_load_data) {
+window._bubble_page_load_data = {}
+}
+window._bubble_page_load_data['pre_runjs'] = Date.now();
+</script>
+<script type="text/javascript" crossorigin="anonymous" charset="UTF-8" src="./Your Bubble app_files/run.js"></script>
+<script type="text/javascript">
+if (!window._bubble_page_load_data) {
+window._bubble_page_load_data = {}
+}
+window._bubble_page_load_data['post_runjs'] = Date.now();
+</script>
+<script type="text/javascript">
+if (!window._bubble_page_load_data) {
+window._bubble_page_load_data = {}
+}
+window._bubble_page_load_data['pre_staticjs'] = Date.now();
+</script>
+<script type="text/javascript" crossorigin="anonymous" charset="UTF-8" src="./Your Bubble app_files/static.js"></script>
+<script type="text/javascript">
+if (!window._bubble_page_load_data) {
+window._bubble_page_load_data = {}
+}
+window._bubble_page_load_data['post_staticjs'] = Date.now();
+</script>
+<script type="text/javascript">
+if (!window._bubble_page_load_data) {
+window._bubble_page_load_data = {}
+}
+window._bubble_page_load_data['pre_dynamicjs'] = Date.now();
+</script>
+<script type="text/javascript" crossorigin="anonymous" charset="UTF-8" src="./Your Bubble app_files/dynamic.js"></script>
+<script type="text/javascript">
+if (!window._bubble_page_load_data) {
+window._bubble_page_load_data = {}
+}
+window._bubble_page_load_data['post_dynamicjs'] = Date.now();
+</script>
+</head>
+<body style="box-sizing: border-box; height: 100%;"><script type="text/javascript">
+window.addEventListener('DOMContentLoaded', function (event) {
+  if (window.appquery == null) {
+    css = document.createElement('style');
+css.type='text/css';
+css.appendChild(document.createTextNode(".warning-message-failure {padding: 30px; line-height: 1.5; white-space: pre; z-index: 1000000; position: fixed; width: 100%; height: 100%; background: white;}"));
+document.getElementsByTagName("head")[0].appendChild(css);
+var newDiv = document.createElement("div");
+newDiv.className = "warning-message-failure";
+newDiv.innerHTML = "Your browser was unable to load some necessary resources, contact your IT network administrator and ask them to allow access to <br><br>     dhtiece9044ep.cloudfront.net <br>     dd7tel2830j4w.cloudfront.net/ <br>     d1muf25xaso8hp.cloudfront.net";
+document.body.appendChild(newDiv);
+    httpRequest = new XMLHttpRequest();
+httpRequest.open('POST', '/user/m', true);
+httpRequest.setRequestHeader('Content-Type', 'application/json');
+httpRequest.send(JSON.stringify({measures: {page_load_error: 1, url: document.location.href, errors: window.load_error_log}}));
+  };
+});
+</script><script type="text/javascript">window.addEventListener('DOMContentLoaded', function (event) {if (window.appquery && window.app == null) {css = document.createElement('style');
+css.type='text/css';
+css.appendChild(document.createTextNode(".warning-message-failure {padding: 30px; line-height: 1.5; white-space: pre; z-index: 1000000; position: fixed; width: 100%; height: 100%; background: white;}"));
+document.getElementsByTagName("head")[0].appendChild(css);
+var newDiv = document.createElement("div");
+newDiv.className = "warning-message-failure";
+newDiv.innerHTML = "Your browser was unable to load the application data. We've been notified of the issue. Please try again in a few moments and make sure not to use ad-blockers.";
+document.body.appendChild(newDiv);}});</script>
+<img style="display: none;" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7">
+<!-- </div><div class="bubble-element HTML" style="top: 144px; width: 67px; left: 167px; position: absolute; box-sizing: border-box; z-index: 65; height: 24px; padding: 4px; border-radius: 0px;"><a href="https://www.linkedin.com/in/gabrieicardoso/">LinkedIn</a></div><button class="fa fa-envelope-o inner-element bubble-element" style="top: 149px; width: 12px; left: 62px; position: absolute; box-sizing: border-box; z-index: 66; height: 12px; padding: 0px; text-align: center; background: none; border: none; cursor: inherit; color: rgb(58, 77, 143); font-size: 12px; border-radius: 4px;"></button><button class="fa fa-graduation-cap inner-element bubble-element" style="top: 149px; width: 17px; left: 149px; position: absolute; box-sizing: border-box; z-index: 67; height: 12px; padding: 0px; text-align: center; background: none; border: none; cursor: inherit; color: rgb(58, 77, 143); font-size: 12px; border-radius: 4px;"></button></div></div></div><div class="page-is-loaded"></div><div style="width: 128px !important; position: fixed !important; bottom: 10px !important; right: 10px !important; height: 29px !important; z-index: 100000000000 !important; box-shadow: 0px 0px 20px 0 #00000069 !important; background: #0205D3 !important; border-radius: 3px !important;"><div style="position: absolute;" class="notranslate" translate="no"><div style=""><img alt="Bubble" src="" style="width: 15px !important; margin-top: 7px !important; margin-left: 6px !important; float: left;"><div style="color: white; font-size: 12px; font-family: Arial, sans-serif; margin-top: 9px; float: left; margin-left: 8px; width: 95px; font-weight: bold;">Built on Bubble</div></div></div><a target="_blank" style="width: 100%; height: 100%; position: absolute;" href="https://bubble.io/?utm_source=app_mention&amp;utm_content=hellosignplugindevelopment"></a></div></body></html> -->
